@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 50px; 
+            line-height: 1.6;
+            position: relative;
+        }
+
+        h1 {
+            font-family: 'Anton', sans-serif; 
+            color: black; 
+            font-size: 80px; 
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-family: Arial, sans-serif; 
+            font-size: 24px; 
+            margin-bottom: 30px;
+        }
+
+        .toc {
+            font-family: 'Anton', sans-serif; 
+            font-size: 20px;
+            padding: 20px; 
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 250px;
+            margin-bottom: 30px;
+        }
+
+        .toc a {
+            text-decoration: none; 
+            color: #000; 
+            display: block; 
+            margin: 10px 0; 
+            padding: 5px; 
+            background-color: #f4f4f4;
+            border-radius: 5px;
+        }
+
+        .toc a:hover {
+            background-color: #ddd;
+        }
+
+        section {
+            margin-top: 50px; 
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 40px;
+        }
+
+        section h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 40px;
+            font-weight: normal; 
+            margin-bottom: 20px;
+        }
+
+        section p {
+            font-size: 20px;
+        }
+
+        /* Logo positioning at top-right */
+        .logo {
+            position: absolute;
+            top: 10px;   /* Adjust the distance from the top */
+            right: 10px; /* Adjust the distance from the right */
+            height: 60px; /* Adjust the size of the logo */
+            width: auto;  /* Maintain aspect ratio */
+        }
+
+        /* Styling the down arrow button */
+        .arrow-btn {
+            cursor: pointer;
+            font-size: 24px;
+            margin-left: 10px;
+        }
+
+        /* Hide chapters by default */
+        .chapters {
+            display: none;
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        /* Show the chapters when toggled */
+        .show-chapters {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Logo at the top-right -->
+    <img src="../200.png" alt="Website Logo" class="logo">
+
+    <h1>Welcome to the Dashboard!</h1>
+    <p>You have successfully signed in.</p>
+
+    <!-- Table of Contents -->
+    <div class="toc">
+        <h2>Table of Contents</h2>
+
+        <!-- Social Science -->
+        <div>
+            <span>Social Science</span>
+            <button class="arrow-btn" onclick="toggleChapters('social-science-chapters')">↓</button>
+        </div>
+        <div id="social-science-chapters" class="chapters">
+            <ul>
+                <li>Chapter 1: History</li>
+                <li>Chapter 2: Geography</li>
+                <li>Chapter 3: Political Science</li>
+            </ul>
+        </div>
+
+        <!-- Maths -->
+        <div>
+            <span>Maths</span>
+            <button class="arrow-btn" onclick="toggleChapters('maths-chapters')">↓</button>
+        </div>
+        <div id="maths-chapters" class="chapters">
+            <ul>
+                <li>Chapter 1: Algebra</li>
+                <li>Chapter 2: Geometry</li>
+                <li>Chapter 3: Trigonometry</li>
+            </ul>
+        </div>
+
+        <!-- Science -->
+        <div>
+            <span>Science</span>
+            <button class="arrow-btn" onclick="toggleChapters('science-chapters')">↓</button>
+        </div>
+        <div id="science-chapters" class="chapters">
+            <ul>
+                <li>Chapter 1: Physics</li>
+                <li>Chapter 2: Chemistry</li>
+                <li>Chapter 3: Biology</li>
+            </ul>
+        </div>
+
+        <!-- English -->
+        <div>
+            <span>English</span>
+            <button class="arrow-btn" onclick="toggleChapters('english-chapters')">↓</button>
+        </div>
+        <div id="english-chapters" class="chapters">
+            <ul>
+                <li>Chapter 1: Grammar</li>
+                <li>Chapter 2: Literature</li>
+                <li>Chapter 3: Writing Skills</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- JavaScript for toggling the chapters visibility -->
+    <script>
+        function toggleChapters(chapterId) {
+            var chapter = document.getElementById(chapterId);
+            chapter.classList.toggle("show-chapters");
+        }
+    </script>
+
+</body>
+</html>
